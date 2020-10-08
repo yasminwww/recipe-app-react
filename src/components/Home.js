@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Recipe from './Recipe'
+import lemons from '../images/lemons.jpg'
+import Header from './Header'
 
 const Wrapper = styled.div`
   .form-container {
@@ -51,6 +52,7 @@ const Home = () => {
     const response = await fetch(example)
     const data = await response.json()
     console.log(data.hits)
+
     setRecipes(data.hits)
   }
 
@@ -79,20 +81,21 @@ const Home = () => {
           </button>
         </form>
       </div>
-      <div className='gallery-wrapper'>
-        {recipes &&
-          recipes.map((recipe) => (
-            <div className='recipe-card'>
-              <img src={recipe.recipe.image} alt=''></img>
-              <p>{recipe.recipe.label}</p>
-              <div>{recipe.recipe.calories}</div>
-              <div>{recipe.recipe.calories}</div>
-            </div>
-          ))}
+      {fullQuery === '' ? <Header /> : null}
+      <div className='background'>
+        <div className='gallery-wrapper'>
+          {recipes &&
+            recipes.map((recipe) => (
+              <div key={recipe.recipe.calories} className='recipe-card'>
+                <img src={recipe.recipe.image} alt=''></img>
+                <p>{recipe.recipe.label}</p>
+                <div>{recipe.recipe.calories}</div>
+              </div>
+            ))}
+        </div>
       </div>
     </Wrapper>
   )
 }
 
-// <Recipe key={recipe.recipe.calories} hits={recipe} />
 export default Home

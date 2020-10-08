@@ -14,18 +14,21 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-items: center;
-
     align-items: center;
     padding: 15px;
   }
 
+  h2,
+  p {
+    line-height: 30px;
+  }
   h2 {
     margin-top: 30px;
     font-weight: bold;
     justify-items: start;
   }
   p {
-    width: 60%;
+    width: 50%;
   }
 `
 
