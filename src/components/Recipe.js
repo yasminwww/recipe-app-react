@@ -5,11 +5,11 @@ const Recipe = ({ hitts }) => {
   // const {recepie:}
   return (
     <div>
-      {/* <div>{title}</div>
-      <img src={image} alt=''></img>
-      <div>{calories}</div>
-      <div>{calories}</div>
-      {digest.map((item) => (
+      {/* <div>{hitts.recipe.title}</div>
+      <img src={hitts.recipe.image} alt=''></img>
+      <div>{hitts.recipe.calories}</div>
+      <div>{hitts.recipe.calories}</div>
+      {hitts.recipe.digest.map((item) => (
         <div>
           {item.label}: {item.total}
         </div>
