@@ -19,8 +19,8 @@ const Wrapper = styled.div`
   .gallery-wrapper {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
-   /* grid-gap: 20px; */
    justify-content: center;
+   grid-row-gap: 10px;
  }
   .recipe-card {
     width: 100%;
@@ -76,7 +76,7 @@ const Home = () => {
           recipes.map((recipe) => (
             <div className='recipe-card'>
               <img src={recipe.recipe.image} alt=''></img>
-              <div>{recipe.recipe.label}</div>
+              <p>{recipe.recipe.label}</p>
               <div>{recipe.recipe.calories}</div>
             </div>
           ))}
