@@ -41,11 +41,12 @@ const Home = () => {
           Search
         </button>
       </form>
-
-      {recipes &&
-        recipes.map((recipe) => (
-          <Recipe key={recipe.recipe.calorie} hitts={recipe.recipe} />
-        ))}
+      <div className="gallery-wrapper">
+        {recipes &&
+          recipes.map((recipe) => (
+            <Recipe key={recipe.recipe.calorie} hitts={recipe} />
+          ))}
+      </div>
     </div>
   )
 }
