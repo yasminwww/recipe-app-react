@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-items: center;
     justify-content: space-evenly;
-    padding: 10px;
+    padding: 15px;
   }
   .nav-links {
     display: flex;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   .nav-links a {
     text-decoration: none;
     padding-right: 20px;
-    font-family: 'Questrial', sans-serif;
+    margin-top: 10px;
   }
   .logo {
     font-family: 'Fredoka One', cursive;

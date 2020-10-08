@@ -5,27 +5,33 @@ import Recipe from './Recipe'
 const Wrapper = styled.div`
   .form-container {
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
     justify-content: center;
   }
   .search-form {
-    margin-top: 5vh;
+    margin-top: 2vh;
   }
   .search-bar {
     padding: 10px;
+    border-radius: 10px;
     width: 400px;
+    margin-bottom: 5vh;
   }
-  
+  button {
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
   .gallery-wrapper {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
-   justify-content: center;
-   grid-row-gap: 10px;
- }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
+    justify-content: center;
+    grid-row-gap: 10px;
+  }
   .recipe-card {
     width: 100%;
-   }
-
+  }
 `
 
 const Home = () => {
@@ -44,6 +50,7 @@ const Home = () => {
   const getRecipes = async () => {
     const response = await fetch(example)
     const data = await response.json()
+    console.log(data.hits)
     setRecipes(data.hits)
   }
 
@@ -63,6 +70,7 @@ const Home = () => {
           <input
             type='text'
             className='search-bar'
+            placeholder='Search by ingredient, name, first letter...'
             value={query}
             onChange={getInputQuery}
           ></input>
@@ -78,12 +86,13 @@ const Home = () => {
               <img src={recipe.recipe.image} alt=''></img>
               <p>{recipe.recipe.label}</p>
               <div>{recipe.recipe.calories}</div>
+              <div>{recipe.recipe.calories}</div>
             </div>
           ))}
       </div>
-    </Wrapper >
+    </Wrapper>
   )
 }
 
-// <Recipe key={recipe.recipe.calories} hitts={recipe} />
+// <Recipe key={recipe.recipe.calories} hits={recipe} />
 export default Home

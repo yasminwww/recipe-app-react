@@ -1,14 +1,14 @@
 import React from 'react'
 
-const Recipe = ({ hitts }) => {
-  console.log(hitts)
-  // const {recepie:}
+const Recipe = ({ hits }) => {
+  console.log(hits)
+
   return (
     <>
-      <div>{hitts.recipe.title}</div>
-      <img src={hitts.recipe.image} alt=''></img>
-      <div>{hitts.recipe.calories}</div>
-      <div>{hitts.recipe.calories}</div>
+      <div>{hits.recipe.title}</div>
+      <img src={hits.recipe.image} alt=''></img>
+      <div>{hits.recipe.calories}</div>
+      <div>{hits.recipe.calories}</div>
     </>
   )
 }
