@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   }
   .logo {
     font-family: 'Fredoka One', cursive;
-    font-size: 20px;
+    font-size: 30px;
   }
 `
 

@@ -15,6 +15,17 @@ const Wrapper = styled.div`
     padding: 10px;
     width: 400px;
   }
+  
+  .gallery-wrapper {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
+   /* grid-gap: 20px; */
+   justify-content: center;
+ }
+  .recipe-card {
+    width: 100%;
+   }
+
 `
 
 const Home = () => {
@@ -59,14 +70,20 @@ const Home = () => {
             Search
           </button>
         </form>
-
+      </div>
+      <div className='gallery-wrapper'>
         {recipes &&
           recipes.map((recipe) => (
-            <Recipe key={recipe.recipe.calories} hitts={recipe} />
+            <div className='recipe-card'>
+              <img src={recipe.recipe.image} alt=''></img>
+              <div>{recipe.recipe.label}</div>
+              <div>{recipe.recipe.calories}</div>
+            </div>
           ))}
       </div>
-    </Wrapper>
+    </Wrapper >
   )
 }
 
+// <Recipe key={recipe.recipe.calories} hitts={recipe} />
 export default Home
