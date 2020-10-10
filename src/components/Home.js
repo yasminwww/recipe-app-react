@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { log } from '../log'
 import styled from 'styled-components'
-import lemons from '../images/lemons.jpg'
 import Header from './Header'
+import Recipe from './Recipe'
 
 const Wrapper = styled.div`
   .form-container {
@@ -11,27 +12,18 @@ const Wrapper = styled.div`
   }
   .search-form {
     margin-top: 2vh;
+    font-size: 30px;
   }
   .search-bar {
     padding: 10px;
     border-radius: 10px;
-    width: 400px;
+    width: 45vw;
     margin-bottom: 5vh;
   }
-  button {
+  .search-button {
     margin-left: 10px;
     padding: 10px;
     border-radius: 10px;
-  }
-
-  .gallery-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
-    justify-content: center;
-    grid-row-gap: 10px;
-  }
-  .recipe-card {
-    width: 100%;
   }
 `
 
@@ -39,6 +31,7 @@ const Home = () => {
   const [recipes, setRecipes] = useState([])
   const [query, setQuery] = useState('')
   const [fullQuery, setFullQuery] = useState('')
+
   const API_ID = process.env.REACT_APP_API_ID
   const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -51,9 +44,9 @@ const Home = () => {
   const getRecipes = async () => {
     const response = await fetch(example)
     const data = await response.json()
-    console.log(data.hits)
 
-    setRecipes(data.hits)
+    const { hits: recipe } = data
+    setRecipes(recipe)
   }
 
   const getInputQuery = (e) => {
@@ -65,6 +58,8 @@ const Home = () => {
     setQuery('')
   }
 
+  const placeholder = 'Search by ingredient, name, first letter...'
+
   return (
     <Wrapper>
       <div className='form-container'>
@@ -72,7 +67,7 @@ const Home = () => {
           <input
             type='text'
             className='search-bar'
-            placeholder='Search by ingredient, name, first letter...'
+            placeholder={placeholder}
             value={query}
             onChange={getInputQuery}
           ></input>
@@ -82,18 +77,7 @@ const Home = () => {
         </form>
       </div>
       {fullQuery === '' ? <Header /> : null}
-      <div className='background'>
-        <div className='gallery-wrapper'>
-          {recipes &&
-            recipes.map((recipe) => (
-              <div key={recipe.recipe.calories} className='recipe-card'>
-                <img src={recipe.recipe.image} alt=''></img>
-                <p>{recipe.recipe.label}</p>
-                <div>{recipe.recipe.calories}</div>
-              </div>
-            ))}
-        </div>
-      </div>
+      {recipes !== '' ? <Recipe recipes={recipes} /> : null}
     </Wrapper>
   )
 }

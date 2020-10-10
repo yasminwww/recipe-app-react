@@ -1,22 +1,32 @@
 import React from 'react'
+import { log } from '../log'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import lemons from '../images/lemons.jpg'
 
 const Wrapper = styled.div`
-  /* width: 100%; */
   nav {
     display: flex;
     justify-items: center;
     justify-content: space-evenly;
-    padding: 15px;
+    padding: 20px;
+    /* background: url(${lemons}) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
   }
+
   .nav-links {
     display: flex;
   }
   .nav-links a {
     text-decoration: none;
-    padding-right: 20px;
+    padding-right: 3rem;
     margin-top: 10px;
+    color: black;
+    /* font-weight: bold; */
+    font-size: 25px;
   }
   .logo {
     font-family: 'Fredoka One', cursive;
@@ -29,7 +39,7 @@ const Navbar = () => {
     <div>
       <Wrapper>
         <nav className='nav-bar'>
-          <div className='logo'>YUMS</div>
+          <div className='logo'>YUMMY</div>
           <div className='nav-links'>
             <Link to='/'>Home </Link>
             <Link to='/about'>About</Link>
