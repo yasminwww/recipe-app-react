@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { log } from '../log'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import lemons from '../images/lemons.jpg'
 import SearchForm from './SearchForm'
 
 const Wrapper = styled.div`
@@ -36,6 +35,8 @@ const Wrapper = styled.div`
 `
 
 const Navbar = () => {
+  // const { setFullQuery } = useContext(SearchContext)
+
   return (
     <div>
       <Wrapper>

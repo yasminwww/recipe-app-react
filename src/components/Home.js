@@ -29,9 +29,8 @@ const Wrapper = styled.div`
 `
 
 const Home = () => {
-  const msg = useContext(SearchContext)
-  log(msg)
-  const [recipes, setRecipes] = useState([])
+  const { recipes } = useContext(SearchContext)
+
   const [query, setQuery] = useState('')
   const [fullQuery, setFullQuery] = useState('')
 
@@ -40,17 +39,17 @@ const Home = () => {
 
   const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}`
 
-  useEffect(() => {
-    getRecipes()
-  }, [fullQuery])
+  // useEffect(() => {
+  //   getRecipes()
+  // }, [fullQuery])
 
-  const getRecipes = async () => {
-    const response = await fetch(example)
-    const data = await response.json()
+  // const getRecipes = async () => {
+  //   const response = await fetch(example)
+  //   const data = await response.json()
 
-    const { hits: recipe } = data
-    setRecipes(recipe)
-  }
+  //   const { hits: recipe } = data
+  //   // setRecipes(recipe)
+  // }
 
   const getFullQuery = (e) => {
     e.preventDefault()
@@ -61,8 +60,8 @@ const Home = () => {
   const placeholder = 'Search by ingredient, name, first letter...'
 
   return (
-    <Wrapper>
-      <div className='form-container'>
+    /*recipes ?*/ <Wrapper>
+      {/* <div className='form-container'>
         <form className='search-form' onSubmit={getFullQuery}>
           <input
             type='text'
@@ -75,11 +74,14 @@ const Home = () => {
             Search
           </button>
         </form>
-      </div>
-      {fullQuery === '' ? <Header /> : null}
-      {recipes !== '' ? <Recipe recipes={recipes} /> : null}
+      </div> */}
+
+      <Recipe recipes={recipes} />
     </Wrapper>
   )
+  /* : (
+    <Header />
+  )*/
 }
 
 export default Home

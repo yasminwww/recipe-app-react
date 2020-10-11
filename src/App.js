@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import About from './components/About'
 import SearchContextProvider from './components/SearchContext'
+
 import './App.css'
 
 function App() {
