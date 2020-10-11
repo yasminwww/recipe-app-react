@@ -3,9 +3,10 @@ import { log } from '../log'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import lemons from '../images/lemons.jpg'
+import SearchForm from './SearchForm'
 
 const Wrapper = styled.div`
-  nav {
+  .nav-bar {
     display: flex;
     justify-items: center;
     justify-content: space-evenly;
@@ -45,6 +46,9 @@ const Navbar = () => {
             <Link to='/about'>About</Link>
           </div>
         </nav>
+        <div className='fast-track'>
+          <div></div>
+        </div>
       </Wrapper>
     </div>
   )

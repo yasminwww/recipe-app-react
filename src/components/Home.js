@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { log } from '../log'
 import styled from 'styled-components'
 import Header from './Header'
 import Recipe from './Recipe'
+import { SearchContext } from './SearchContext'
 
 const Wrapper = styled.div`
   .form-container {
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
   .search-bar {
     padding: 10px;
     border-radius: 10px;
-    width: 45vw;
+    width: 40vw;
     margin-bottom: 5vh;
   }
   .search-button {
@@ -28,6 +29,8 @@ const Wrapper = styled.div`
 `
 
 const Home = () => {
+  const msg = useContext(SearchContext)
+  log(msg)
   const [recipes, setRecipes] = useState([])
   const [query, setQuery] = useState('')
   const [fullQuery, setFullQuery] = useState('')
@@ -49,9 +52,6 @@ const Home = () => {
     setRecipes(recipe)
   }
 
-  const getInputQuery = (e) => {
-    setQuery(e.target.value)
-  }
   const getFullQuery = (e) => {
     e.preventDefault()
     setFullQuery(query)
@@ -69,7 +69,7 @@ const Home = () => {
             className='search-bar'
             placeholder={placeholder}
             value={query}
-            onChange={getInputQuery}
+            onChange={(e) => setQuery(e.target.value)}
           ></input>
           <button type='submit' className='search-button'>
             Search

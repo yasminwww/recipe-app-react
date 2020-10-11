@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import About from './components/About'
+import SearchContextProvider from './components/SearchContext'
 import './App.css'
 
 function App() {
@@ -11,8 +12,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
+          <SearchContextProvider>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+          </SearchContextProvider>
         </Switch>
       </BrowserRouter>
     </div>
