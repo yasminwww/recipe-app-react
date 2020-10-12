@@ -11,13 +11,6 @@ const SearchContextProvider = ({ children }) => {
   const API_ID = process.env.REACT_APP_API_ID
   const API_KEY = process.env.REACT_APP_API_KEY
 
-  // const updateLastQuery = () => {
-  // const isLastQuery =
-  //   localStorage.getItem('lastQuery') !== ''
-  //     ? setLastQuery(localStorage.getItem('lastQuery'))
-  //     : fullQuery
-  // }
-
   const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}`
 
   useEffect(() => {
@@ -27,8 +20,6 @@ const SearchContextProvider = ({ children }) => {
         ? setFullQuery(localStorage.getItem('lastQuery'))
         : fullQuery
   }, [fullQuery, lastQuery])
-
-  log('full query', fullQuery)
 
   // Toggle funtion from props
   const getRecipes = async () => {

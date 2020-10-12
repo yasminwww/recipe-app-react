@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 // import { log } from '../log'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import SearchForm from './SearchForm'
-import { SearchContext } from './SearchContext'
 
 const Wrapper = styled.div`
   .nav-bar {
@@ -15,19 +14,14 @@ const Wrapper = styled.div`
 
   .nav-links {
     display: flex;
+    margin-top: 10px;
   }
   .nav-links a {
     text-decoration: none;
     padding-right: 3rem;
-    margin-top: 10px;
     color: black;
-
+    cursor: pointer;
     font-size: 25px;
-    bottom: 0;
-    right: 0;
-  }
-  .nav-links a span {
-    position: absolute;
     bottom: 0;
     right: 0;
   }
@@ -38,6 +32,7 @@ const Wrapper = styled.div`
     align-items: center;
     font-family: 'Fredoka One', cursive;
     font-size: 40px;
+    padding: 20px;
   }
 `
 

@@ -28,21 +28,19 @@ const Wrapper = styled.div`
 
 const SearchForm = () => {
   const { setFullQuery } = useContext(SearchContext)
-  log(setFullQuery)
   const localtionURL = 'http://localhost:3000/'
   const [query, setQuery] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setFullQuery(query)
     localStorage.setItem('lastQuery', query)
+    setFullQuery(query)
     setQuery('')
+
     const current =
       window.location.href !== localtionURL
         ? window.location.assign(localtionURL)
         : window.location.href
-
-    // log(current)
   }
 
   const placeholder = 'Search by ingredient, name, first letter...'
