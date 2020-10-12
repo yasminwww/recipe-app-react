@@ -6,15 +6,27 @@ export const SearchContext = createContext()
 const SearchContextProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([])
   const [fullQuery, setFullQuery] = useState('')
+  const [lastQuery, setLastQuery] = useState('')
 
   const API_ID = process.env.REACT_APP_API_ID
   const API_KEY = process.env.REACT_APP_API_KEY
+
+  // const updateLastQuery = () => {
+  // const isLastQuery =
+  //   localStorage.getItem('lastQuery') !== ''
+  //     ? setLastQuery(localStorage.getItem('lastQuery'))
+  //     : fullQuery
+  // }
 
   const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}`
 
   useEffect(() => {
     getRecipes()
-  }, [fullQuery])
+    const isLastQuery =
+      localStorage.getItem('lastQuery') !== ''
+        ? setFullQuery(localStorage.getItem('lastQuery'))
+        : fullQuery
+  }, [fullQuery, lastQuery])
 
   log('full query', fullQuery)
 

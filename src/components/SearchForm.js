@@ -34,12 +34,14 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setFullQuery(query)
+    localStorage.setItem('lastQuery', query)
+    setQuery('')
     const current =
       window.location.href !== localtionURL
         ? window.location.assign(localtionURL)
         : window.location.href
-    setFullQuery(query)
-    setQuery('')
+
     // log(current)
   }
 

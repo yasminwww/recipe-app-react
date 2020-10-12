@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
 const Home = () => {
   const { recipes } = useContext(SearchContext)
-  // log(recipes)
+  log(recipes)
 
   return recipes ? (
     <Wrapper>

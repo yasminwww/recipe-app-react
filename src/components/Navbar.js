@@ -42,15 +42,13 @@ const Wrapper = styled.div`
 `
 
 const Navbar = () => {
-  const { setFullQuery } = useContext(SearchContext)
-
   return (
     <div>
       <Wrapper>
         <div className='logo'>YUMMY</div>
         <nav className='nav-bar'>
           <div className='nav-links'>
-            <Link to='/'>Home </Link>
+            <Link to='/'>Home</Link>
             <Link to='/about'>About</Link>
             <Link to='/'>Home </Link>
             <Link to='/about'>About</Link>
