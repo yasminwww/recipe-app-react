@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Header from './Header'
 import Recipe from './Recipe'
 import { SearchContext } from './SearchContext'
+import SearchForm from './SearchForm'
 
 const Wrapper = styled.div`
   .form-container {
@@ -30,14 +31,12 @@ const Wrapper = styled.div`
 
 const Home = () => {
   const { recipes } = useContext(SearchContext)
+  log(recipes)
 
-  const [query, setQuery] = useState('')
-  const [fullQuery, setFullQuery] = useState('')
+  // const [query, setQuery] = useState('')
+  // const [fullQuery, setFullQuery] = useState('')
 
-  const API_ID = process.env.REACT_APP_API_ID
-  const API_KEY = process.env.REACT_APP_API_KEY
-
-  const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}`
+  // const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}`
 
   // useEffect(() => {
   //   getRecipes()
@@ -51,37 +50,21 @@ const Home = () => {
   //   // setRecipes(recipe)
   // }
 
-  const getFullQuery = (e) => {
-    e.preventDefault()
-    setFullQuery(query)
-    setQuery('')
-  }
+  // const getFullQuery = (e) => {
+  //   e.preventDefault()
+  //   setFullQuery(query)
+  //   setQuery('')
+  // }
 
-  const placeholder = 'Search by ingredient, name, first letter...'
+  // const placeholder = 'Search by ingredient, name, first letter...'
 
-  return (
-    /*recipes ?*/ <Wrapper>
-      {/* <div className='form-container'>
-        <form className='search-form' onSubmit={getFullQuery}>
-          <input
-            type='text'
-            className='search-bar'
-            placeholder={placeholder}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          ></input>
-          <button type='submit' className='search-button'>
-            Search
-          </button>
-        </form>
-      </div> */}
-
+  return recipes ? (
+    <Wrapper>
       <Recipe recipes={recipes} />
     </Wrapper>
-  )
-  /* : (
+  ) : (
     <Header />
-  )*/
+  )
 }
 
 export default Home

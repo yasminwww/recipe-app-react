@@ -11,13 +11,12 @@ const Wrapper = styled.div`
     justify-content: center;
   }
   .search-form {
-    margin-top: 2vh;
     font-size: 30px;
   }
   .search-bar {
     padding: 10px;
     border-radius: 10px;
-    width: 40vw;
+    width: 20vw;
     margin-bottom: 5vh;
   }
   .search-button {
@@ -29,6 +28,7 @@ const Wrapper = styled.div`
 
 const SearchForm = () => {
   const { setFullQuery } = useContext(SearchContext)
+  log(setFullQuery)
 
   const [query, setQuery] = useState('')
 

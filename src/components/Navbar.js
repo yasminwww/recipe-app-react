@@ -3,6 +3,7 @@ import { log } from '../log'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import SearchForm from './SearchForm'
+import { SearchContext } from './SearchContext'
 
 const Wrapper = styled.div`
   .nav-bar {
@@ -10,8 +11,8 @@ const Wrapper = styled.div`
     justify-items: center;
     justify-content: space-evenly;
     padding: 20px;
-    /* background: url(${lemons}) no-repeat center center;
-    -webkit-background-size: cover;
+
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; */
@@ -25,26 +26,52 @@ const Wrapper = styled.div`
     padding-right: 3rem;
     margin-top: 10px;
     color: black;
-    /* font-weight: bold; */
+
     font-size: 25px;
+    bottom: 0;
+    right: 0;
+  }
+  .nav-links a span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .nav-links::before {
+    content: '';
+    display: block;
+    background-color: red;
+  }
+  .nav-links::after {
+    content: '';
+    display: block;
+    background-color: red;
   }
   .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Fredoka One', cursive;
-    font-size: 30px;
+    font-size: 40px;
   }
 `
 
 const Navbar = () => {
-  // const { setFullQuery } = useContext(SearchContext)
+  const { setFullQuery } = useContext(SearchContext)
 
   return (
     <div>
       <Wrapper>
+        <div className='logo'>YUMMY</div>
         <nav className='nav-bar'>
-          <div className='logo'>YUMMY</div>
           <div className='nav-links'>
             <Link to='/'>Home </Link>
             <Link to='/about'>About</Link>
+            <Link to='/'>Home </Link>
+            <Link to='/about'>About</Link>
+            <Link to='/'>Home </Link>
+            <Link to='/about'>About</Link>
+            <SearchForm />
           </div>
         </nav>
         <div className='fast-track'>

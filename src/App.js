@@ -11,13 +11,13 @@ function App() {
   return (
     <div className='App'>
       <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <SearchContextProvider>
+        <SearchContextProvider>
+          <Navbar />
+          <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/about' component={About} />
-          </SearchContextProvider>
-        </Switch>
+          </Switch>
+        </SearchContextProvider>
       </BrowserRouter>
     </div>
   )
