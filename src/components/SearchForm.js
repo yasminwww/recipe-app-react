@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { log } from '../log'
 import styled from 'styled-components'
 
@@ -29,13 +29,18 @@ const Wrapper = styled.div`
 const SearchForm = () => {
   const { setFullQuery } = useContext(SearchContext)
   log(setFullQuery)
-
+  const localtionURL = 'http://localhost:3000/'
   const [query, setQuery] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const current =
+      window.location.href !== localtionURL
+        ? window.location.assign(localtionURL)
+        : window.location.href
     setFullQuery(query)
     setQuery('')
+    // log(current)
   }
 
   const placeholder = 'Search by ingredient, name, first letter...'
@@ -43,7 +48,7 @@ const SearchForm = () => {
   return (
     <Wrapper>
       <div className='form-container'>
-        <form className='search-form' onSubmit={handleSubmit}>
+        <form className='search-form' action='/' onSubmit={handleSubmit}>
           <input
             type='text'
             className='search-bar'

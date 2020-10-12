@@ -31,32 +31,7 @@ const Wrapper = styled.div`
 
 const Home = () => {
   const { recipes } = useContext(SearchContext)
-  log(recipes)
-
-  // const [query, setQuery] = useState('')
-  // const [fullQuery, setFullQuery] = useState('')
-
-  // const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}`
-
-  // useEffect(() => {
-  //   getRecipes()
-  // }, [fullQuery])
-
-  // const getRecipes = async () => {
-  //   const response = await fetch(example)
-  //   const data = await response.json()
-
-  //   const { hits: recipe } = data
-  //   // setRecipes(recipe)
-  // }
-
-  // const getFullQuery = (e) => {
-  //   e.preventDefault()
-  //   setFullQuery(query)
-  //   setQuery('')
-  // }
-
-  // const placeholder = 'Search by ingredient, name, first letter...'
+  // log(recipes)
 
   return recipes ? (
     <Wrapper>

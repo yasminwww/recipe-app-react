@@ -1,5 +1,5 @@
 import React from 'react'
-import { log } from '../log'
+// import { log } from '../log'
 import styled from 'styled-components'
 
 const Content = styled.div`

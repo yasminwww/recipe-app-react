@@ -5,7 +5,7 @@ export const SearchContext = createContext()
 
 const SearchContextProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([])
-  const [fullQuery, setFullQuery] = useState('hello')
+  const [fullQuery, setFullQuery] = useState('')
 
   const API_ID = process.env.REACT_APP_API_ID
   const API_KEY = process.env.REACT_APP_API_KEY
@@ -16,7 +16,7 @@ const SearchContextProvider = ({ children }) => {
     getRecipes()
   }, [fullQuery])
 
-  log(fullQuery)
+  log('full query', fullQuery)
 
   // Toggle funtion from props
   const getRecipes = async () => {
