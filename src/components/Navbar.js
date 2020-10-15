@@ -38,6 +38,8 @@ const Wrapper = styled.div`
   span {
     color: #b6b6b6;
     font-size: 20px;
+    align-self: end;
+    padding-left: 10px;
   }
 `
 
@@ -47,7 +49,7 @@ const Navbar = () => {
       <Wrapper>
         <div className='logo'>
           Delish
-          <span>yummy creations</span>
+          <span> yummy creations</span>
         </div>
 
         <nav className='nav-bar'>
