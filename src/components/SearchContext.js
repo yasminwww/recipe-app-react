@@ -11,7 +11,7 @@ const SearchContextProvider = ({ children }) => {
   const API_ID = process.env.REACT_APP_API_ID
   const API_KEY = process.env.REACT_APP_API_KEY
 
-  const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}`
+  const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}&to=10`
 
   useEffect(() => {
     getRecipes()

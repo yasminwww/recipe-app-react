@@ -1,5 +1,5 @@
 import React from 'react'
-// import { log } from '../log'
+import { log } from '../log'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import SearchForm from './SearchForm'
@@ -7,32 +7,37 @@ import SearchForm from './SearchForm'
 const Wrapper = styled.div`
   .nav-bar {
     display: flex;
-    justify-items: center;
+    padding-top: 13px;
     justify-content: space-evenly;
-    padding: 20px;
+    /* align-items: center; */
   }
 
   .nav-links {
     display: flex;
-    margin-top: 10px;
+    align-items: baseline;
   }
   .nav-links a {
     text-decoration: none;
     padding-right: 3rem;
     color: black;
     cursor: pointer;
-    font-size: 25px;
-    bottom: 0;
-    right: 0;
+    font-size: 23px;
   }
 
   .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Fredoka One', cursive;
+    /* font-family: 'Fredoka One', cursive; */
+    font-family: 'Pacifico', cursive;
     font-size: 40px;
-    padding: 20px;
+    padding: 10px;
+    border-top: 7px dotted #b6b6b6;
+    border-bottom: 7px dotted #b6b6b6;
+  }
+  span {
+    color: #b6b6b6;
+    font-size: 20px;
   }
 `
 
@@ -40,16 +45,23 @@ const Navbar = () => {
   return (
     <div>
       <Wrapper>
-        <div className='logo'>YUMMY</div>
+        <div className='logo'>
+          Delish
+          <span>yummy creations</span>
+        </div>
+
         <nav className='nav-bar'>
           <div className='nav-links'>
-            <Link to='/'>Home</Link>
-            <Link to='/about'>About</Link>
-            <Link to='/'>Home </Link>
-            <Link to='/about'>About</Link>
-            <Link to='/'>Home </Link>
-            <Link to='/about'>About</Link>
-            <SearchForm />
+            <div>
+              <Link to='/'>Home</Link>
+              <Link to='/'>Baked</Link>
+              <Link to='/'>Stewed </Link>
+              <Link to='/about'>Grilled</Link>
+              <Link to='/about'>About</Link>
+            </div>
+            <div>
+              <SearchForm />
+            </div>
           </div>
         </nav>
         <div className='fast-track'>
