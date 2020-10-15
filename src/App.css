@@ -11,21 +11,6 @@
   background-size: cover;
 } */
 
-body,
-html {
+body {
   height: 100%;
-}
-
-html {
-  background-color: green;
-  /* height: 100%; */
-}
-
-#root {
-  background-color: yellow;
-}
-
-.App {
-  min-height: 100%;
-  background-color: rgb(209, 33, 77);
 }
