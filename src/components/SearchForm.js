@@ -6,11 +6,11 @@ import { SearchContext } from './SearchContext'
 
 const Wrapper = styled.div`
   .search-form {
+    display: flex;
     font-size: 30px;
     padding: 2px;
     border: 2px solid #d1d1d1;
     border-radius: 40px;
-    display: flex;
   }
   .search-bar {
     flex-grow: 1;
@@ -18,7 +18,6 @@ const Wrapper = styled.div`
     border-radius: 40px;
     border: 0;
     outline: none;
-    width: 17vw;
   }
   .search-button {
     padding: 7px;

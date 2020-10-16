@@ -19,6 +19,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: baseline;
     padding: 10px 0 10px;
+    width: 100%;
   }
   .nav-links a {
     text-decoration: none;

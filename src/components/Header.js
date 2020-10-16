@@ -12,21 +12,30 @@ const Content = styled.div`
     /* background-color: red; */
   }
   img {
-    /* display: block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 50%; */
+    width: 100%;
   }
   .header-content {
+    /* background: url(${meal}) no-repeat; */
     display: flex;
+    /* grid-template-columns: 1fr 1fr 1fr; */
 
-    /* justify-content: center; */
+    justify-content: center;
+    align-items: center;
     /* 
     justify-items: center;
     align-items: center; */
   }
   .header-text {
     position: absolute;
+    /* display: flex; */
+    text-align: center;
+    /* justify-items: center; */
+    /* align-items: center; */
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 30px;
   }
 `
 
