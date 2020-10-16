@@ -1,24 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { log } from '../log'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import SearchForm from './SearchForm'
+import { SearchContext } from './SearchContext'
 
 const Wrapper = styled.div`
   .nav-bar {
     display: flex;
     padding-top: 13px;
     justify-content: space-evenly;
-    /* align-items: center; */
+    margin-bottom: 5vh;
   }
 
   .nav-links {
+    border-bottom: 2px solid grey;
+    border-top: 2px solid grey;
     display: flex;
     align-items: baseline;
+    padding: 10px 0 10px;
   }
   .nav-links a {
     text-decoration: none;
-    padding-right: 3rem;
+    padding-right: 4.4rem;
     color: black;
     cursor: pointer;
     font-size: 23px;
@@ -28,12 +32,10 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* font-family: 'Fredoka One', cursive; */
+    cursor: pointer;
     font-family: 'Pacifico', cursive;
     font-size: 40px;
     padding: 10px;
-    border-top: 7px dotted #b6b6b6;
-    border-bottom: 7px dotted #b6b6b6;
   }
   span {
     color: #b6b6b6;
@@ -44,12 +46,18 @@ const Wrapper = styled.div`
 `
 
 const Navbar = () => {
+  const { setRecipes } = useContext(SearchContext)
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    setRecipes([])
+  }
   return (
     <div>
       <Wrapper>
-        <div className='logo'>
+        <div className='logo' onClick={(e) => handleClick(e)}>
           Delish
-          <span> yummy creations</span>
+          <span> yummy delicious.</span>
         </div>
 
         <nav className='nav-bar'>

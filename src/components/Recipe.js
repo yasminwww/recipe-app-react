@@ -22,7 +22,7 @@ const Recipe = ({ recipes }) => {
       <div className='gallery-wrapper'>
         {recipes &&
           recipes.map((recipe) => (
-            <div key={recipe.recipe.calories} className='recipe-card'>
+            <div key={recipe.recipe.label} className='recipe-card'>
               <img src={recipe.recipe.image} alt=''></img>
               <p>{recipe.recipe.label}</p>
               <div>{recipe.recipe.calories}</div>

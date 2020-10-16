@@ -5,25 +5,36 @@ import styled from 'styled-components'
 import { SearchContext } from './SearchContext'
 
 const Wrapper = styled.div`
-  .form-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
   .search-form {
     font-size: 30px;
+    padding: 2px;
+    border: 2px solid #d1d1d1;
+    border-radius: 40px;
+    display: flex;
   }
   .search-bar {
-    padding: 10px;
-    border-radius: 10px;
-    width: 20vw;
-    margin-bottom: 5vh;
+    flex-grow: 1;
+    padding: 7px;
+    border-radius: 40px;
+    border: 0;
+    outline: none;
+    width: 17vw;
   }
   .search-button {
-    margin-left: 10px;
-    padding: 10px;
+    padding: 7px;
     border-radius: 10px;
+    opacity: 0.6;
+    transition: 0.3s;
+    border-radius: 50%;
+    cursor: pointer;
   }
+  .search-button:hover {
+    opacity: 1;
+  }
+
+  /* @media query (900px) {
+
+  } */
 `
 
 const SearchForm = () => {
@@ -47,20 +58,18 @@ const SearchForm = () => {
 
   return (
     <Wrapper>
-      <div className='form-container'>
-        <form className='search-form' action='/' onSubmit={handleSubmit}>
-          <input
-            type='text'
-            className='search-bar'
-            placeholder={placeholder}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          ></input>
-          <button type='submit' className='search-button'>
-            Search
-          </button>
-        </form>
-      </div>
+      <form className='search-form' action='/' onSubmit={handleSubmit}>
+        <input
+          type='text'
+          className='search-bar'
+          placeholder={placeholder}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        ></input>
+        <button type='submit' className='search-button'>
+          <i className='fas fa-search'></i>
+        </button>
+      </form>
     </Wrapper>
   )
 }

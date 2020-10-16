@@ -33,12 +33,11 @@ const Home = () => {
   const { recipes } = useContext(SearchContext)
   log(recipes)
 
-  return recipes ? (
+  return (
     <Wrapper>
+      <Header />
       <Recipe recipes={recipes} />
     </Wrapper>
-  ) : (
-    <Header />
   )
 }
 

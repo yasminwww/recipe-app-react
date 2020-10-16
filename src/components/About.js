@@ -4,24 +4,20 @@ import styled from 'styled-components'
 import spices from '../images/spices.jpg'
 
 const Wrapper = styled.div`
-  .so {
+  .header-container {
     display: flex;
-    /* height: 100%; */
     flex-direction: column;
-
-    /* justify-items: center;
-    align-items: center; */
     height: 100vh;
+    /* overflow: hidden !important; */
   }
   img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    max-width: 60%;
   }
 
   .content {
-    /* flex: 1; */
     position: absolute;
     top: 40%;
     left: 50%;
@@ -41,7 +37,7 @@ const Wrapper = styled.div`
 const About = () => {
   return (
     <Wrapper>
-      <div className='so'>
+      <div className='header-container'>
         <img src={spices} alt='spices' />
         <div className='content'>
           <h2>For those who are passionate about cooking.</h2>
