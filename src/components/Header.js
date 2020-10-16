@@ -34,7 +34,7 @@ const Content = styled.div`
     text-align: center;
     /* justify-items: center; */
     /* align-items: center; */
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 30px;
   }
 `

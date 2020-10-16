@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     border-radius: 40px;
   }
   .search-bar {
-    flex-grow: 1;
+    flex: 1;
     padding: 7px;
     border-radius: 40px;
     border: 0;

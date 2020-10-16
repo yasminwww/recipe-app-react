@@ -7,14 +7,12 @@ const Wrapper = styled.div`
   .header-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    /* overflow: hidden !important; */
   }
   img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 60%;
+    max-width: 100%;
   }
 
   .content {
@@ -22,6 +20,7 @@ const Wrapper = styled.div`
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
   }
 
   h2,

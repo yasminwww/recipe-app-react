@@ -9,11 +9,11 @@ const Wrapper = styled.div`
   .nav-bar {
     display: flex;
     padding-top: 13px;
-    justify-content: space-evenly;
     margin-bottom: 5vh;
   }
 
   .nav-links {
+    justify-content: space-between;
     border-bottom: 2px solid grey;
     border-top: 2px solid grey;
     display: flex;
