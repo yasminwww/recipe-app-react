@@ -9,6 +9,13 @@ const RecipeWrapper = styled.div`
     justify-content: center;
     grid-gap: 20px 20px;
   }
+  .gallery-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Pacifico', cursive;
+  }
   .recipe-card {
     width: 100%;
     cursor: pointer;
@@ -37,7 +44,7 @@ const Recipe = ({ recipes }) => {
   const handleOnClick = (name) => console.log(name)
   return (
     <RecipeWrapper>
-      {/* <div></div> */}
+      <div className='gallery-header'>Recipes</div>
       <div className='gallery-wrapper'>
         {recipes &&
           recipes.map((recipe) => (

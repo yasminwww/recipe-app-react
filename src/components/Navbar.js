@@ -36,7 +36,6 @@ const Wrapper = styled.div`
     align-items: center;
     cursor: pointer;
     font-family: 'Pacifico', cursive;
-
     font-size: 40px;
     padding: 10px;
   }
