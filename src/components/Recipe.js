@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { log } from '../log'
 import styled from 'styled-components'
+import RecipeDetails from './RecipeDetails'
 
 const RecipeWrapper = styled.div`
   .gallery-wrapper {
@@ -13,8 +14,8 @@ const RecipeWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    font-family: 'Pacifico', cursive;
+    /* font-family: 'Pacifico', cursive; */
+    font-size: 30px;
   }
   .recipe-card {
     width: 100%;
@@ -23,6 +24,7 @@ const RecipeWrapper = styled.div`
     flex-direction: column;
     transition: all 0.3s ease 0s;
     margin-top: 20px;
+    border: 2px solid #e6e6e6;
   }
   .image-container {
     width: 100%;
@@ -38,6 +40,12 @@ const RecipeWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .info-section {
+    padding: 10px;
+  }
+  .info-section p {
+    font-size: 20px;
+  }
 `
 
 const Recipe = ({ recipes }) => {
@@ -46,28 +54,33 @@ const Recipe = ({ recipes }) => {
   const handleOnClick = (shareAs) =>
     setRecipeDetails(...recipes.filter((item) => item.shareAs === shareAs))
 
-  console.log(recipeDetails)
-
   return (
-    <RecipeWrapper>
-      {recipes.length > 0 && <div className='gallery-header'>Recipes</div>}
-      <div className='gallery-wrapper'>
-        {recipes &&
-          recipes.map((recipe) => (
-            <div
-              key={recipe.shareAs}
-              className='recipe-card'
-              onClick={() => handleOnClick(recipe.shareAs)}
-            >
-              <div className='image-container'>
-                <img src={recipe.image} alt=''></img>
+    <>
+      <RecipeWrapper>
+        {recipes.length > 0 && (
+          <div className='gallery-header'>Recipe search result</div>
+        )}
+        <div className='gallery-wrapper'>
+          {recipes &&
+            recipes.map((recipe) => (
+              <div
+                key={recipe.shareAs}
+                className='recipe-card'
+                onClick={() => handleOnClick(recipe.shareAs)}
+              >
+                <div className='image-container'>
+                  <img src={recipe.image} alt=''></img>
+                </div>
+                <div className='info-section'>
+                  <p>{recipe.label}</p>
+                  <div>kcal: {Math.round(recipe.calories)}</div>
+                </div>
               </div>
-              <p>{recipe.label}</p>
-              <div>{recipe.calories}</div>
-            </div>
-          ))}
-      </div>
-    </RecipeWrapper>
+            ))}
+        </div>
+      </RecipeWrapper>
+      <RecipeDetails recipeDetails={recipeDetails} />
+    </>
   )
 }
 
