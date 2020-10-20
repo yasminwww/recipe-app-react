@@ -15,7 +15,7 @@ const RecipeWrapper = styled.div`
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease 0s;
-    /* margin-top: ; */
+    margin-top: 20px;
   }
   .image-container {
     width: 100%;
@@ -29,7 +29,6 @@ const RecipeWrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* object-fit: fill; */
   }
 `
 
@@ -43,7 +42,7 @@ const Recipe = ({ recipes }) => {
         {recipes &&
           recipes.map((recipe) => (
             <div
-              key={recipe.recipe.label}
+              key={recipe.recipe.calories}
               className='recipe-card'
               onClick={() => handleOnClick(recipe.recipe.label)}
             >
