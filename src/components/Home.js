@@ -31,12 +31,10 @@ const Wrapper = styled.div`
 
 const Home = () => {
   const { recipes } = useContext(SearchContext)
-  log(recipes)
 
   return (
     <Wrapper>
-      <Header />
-      <Recipe recipes={recipes} />
+      {recipes.length > 0 ? <Recipe recipes={recipes} /> : <Header />}
     </Wrapper>
   )
 }

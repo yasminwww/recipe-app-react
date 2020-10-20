@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { log } from '../log'
 import styled from 'styled-components'
 
@@ -29,6 +29,7 @@ const RecipeWrapper = styled.div`
     padding-top: 56.25%;
     overflow: hidden;
     position: relative;
+    height: 300px;
   }
   .image-container img {
     width: 100%;
@@ -40,24 +41,29 @@ const RecipeWrapper = styled.div`
 `
 
 const Recipe = ({ recipes }) => {
-  log('re:', recipes)
-  const handleOnClick = (name) => console.log(name)
+  const [recipeDetails, setRecipeDetails] = useState([])
+
+  const handleOnClick = (shareAs) =>
+    setRecipeDetails(...recipes.filter((item) => item.shareAs === shareAs))
+
+  console.log(recipeDetails)
+
   return (
     <RecipeWrapper>
-      <div className='gallery-header'>Recipes</div>
+      {recipes.length > 0 && <div className='gallery-header'>Recipes</div>}
       <div className='gallery-wrapper'>
         {recipes &&
           recipes.map((recipe) => (
             <div
-              key={recipe.recipe.calories}
+              key={recipe.shareAs}
               className='recipe-card'
-              onClick={() => handleOnClick(recipe.recipe.label)}
+              onClick={() => handleOnClick(recipe.shareAs)}
             >
               <div className='image-container'>
-                <img src={recipe.recipe.image} alt=''></img>
+                <img src={recipe.image} alt=''></img>
               </div>
-              <p>{recipe.recipe.label}</p>
-              <div>{recipe.recipe.calories}</div>
+              <p>{recipe.label}</p>
+              <div>{recipe.calories}</div>
             </div>
           ))}
       </div>

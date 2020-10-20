@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   }
 
   .nav-links {
-    --brdr: 2.3px solid #4d7810;
+    --brdr: 3px solid #a7d8a6;
     justify-content: space-between;
     border-bottom: var(--brdr);
     border-top: var(--brdr);

@@ -12,6 +12,7 @@ const SearchContextProvider = ({ children }) => {
   const API_KEY = process.env.REACT_APP_API_KEY
 
   const example = `https://api.edamam.com/search?q=${fullQuery}&app_id=${API_ID}&app_key=${API_KEY}&to=51`
+  // const example = `https://api.edamam.com/search?r=9b5945e03f05acbf9d69625138385408&app_id=${API_ID}&app_key=${API_KEY}&to=51`
 
   useEffect(() => {
     getRecipes()
@@ -27,7 +28,9 @@ const SearchContextProvider = ({ children }) => {
     const data = await response.json()
 
     const { hits: recipe } = data
-    setRecipes(recipe)
+    const dataToArr = recipe.map((item) => item.recipe)
+    console.log(dataToArr)
+    setRecipes(dataToArr)
   }
 
   return (

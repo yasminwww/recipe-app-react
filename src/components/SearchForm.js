@@ -13,11 +13,12 @@ const Wrapper = styled.div`
     border-radius: 40px;
   }
   .search-bar {
-    flex: 1;
+    /* flex: 1; */
     padding: 7px;
     border-radius: 40px;
     border: 0;
     outline: none;
+    min-width: 300px;
   }
   .search-button {
     padding: 7px;
