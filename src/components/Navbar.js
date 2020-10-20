@@ -13,9 +13,10 @@ const Wrapper = styled.div`
   }
 
   .nav-links {
+    --brdr: 2.3px solid #4d7810;
     justify-content: space-between;
-    border-bottom: 2px solid grey;
-    border-top: 2px solid grey;
+    border-bottom: var(--brdr);
+    border-top: var(--brdr);
     display: flex;
     align-items: baseline;
     padding: 10px 0 10px;
@@ -35,6 +36,7 @@ const Wrapper = styled.div`
     align-items: center;
     cursor: pointer;
     font-family: 'Pacifico', cursive;
+
     font-size: 40px;
     padding: 10px;
   }

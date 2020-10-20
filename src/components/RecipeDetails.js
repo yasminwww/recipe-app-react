@@ -1,8 +1,8 @@
 import React from 'react'
 import { log } from '../log'
 
-const SingleRecipe = ({ recipeDetails }) => {
+const RecipeDetails = ({ recipeDetails }) => {
   return <div></div>
 }
 
-export default SingleRecipe
+export default RecipeDetails

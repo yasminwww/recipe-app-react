@@ -1,4 +1,5 @@
 /* Global CSS */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 * {
   margin: 0;
@@ -6,16 +7,12 @@
   box-sizing: border-box;
   font-family: 'Questrial', sans-serif;
 }
-/* body {
-  background-image: url('./images/lemons.jpg');
-  background-size: cover;
-} */
 
 body {
   height: 100%;
 }
 
 .App {
-  width: 1080px;
+  width: 1280px;
   margin: 0 auto;
 }
