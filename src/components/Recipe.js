@@ -14,8 +14,8 @@ const RecipeWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* font-family: 'Pacifico', cursive; */
-    font-size: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
   .recipe-card {
     width: 100%;
@@ -23,15 +23,13 @@ const RecipeWrapper = styled.div`
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease 0s;
-    margin-top: 20px;
     border: 2px solid #e6e6e6;
   }
   .image-container {
     width: 100%;
-    padding-top: 56.25%;
     overflow: hidden;
     position: relative;
-    height: 300px;
+    height: 200px;
   }
   .image-container img {
     width: 100%;
@@ -44,19 +42,29 @@ const RecipeWrapper = styled.div`
     padding: 10px;
   }
   .info-section p {
-    font-size: 20px;
+    font-size: 15px;
   }
 `
 
 const Recipe = ({ recipes }) => {
   const [recipeDetails, setRecipeDetails] = useState([])
+  const [isOpen, setIsOpen] = useState(false)
 
-  const handleOnClick = (shareAs) =>
+  const handleOnClick = (shareAs) => {
     setRecipeDetails(...recipes.filter((item) => item.shareAs === shareAs))
+    setIsOpen(true)
+    log(recipeDetails)
+  }
 
+  // handleOnClick(recipe.shareAs)
   return (
     <>
       <RecipeWrapper>
+        <RecipeDetails
+          open={isOpen}
+          recipeDetails={recipeDetails}
+          onClose={() => setIsOpen(false)}
+        />
         {recipes.length > 0 && (
           <div className='gallery-header'>Recipe search result</div>
         )}
@@ -79,7 +87,6 @@ const Recipe = ({ recipes }) => {
             ))}
         </div>
       </RecipeWrapper>
-      <RecipeDetails recipeDetails={recipeDetails} />
     </>
   )
 }

@@ -5,24 +5,24 @@ import styled from 'styled-components'
 import { SearchContext } from './SearchContext'
 
 const Wrapper = styled.div`
+  --brdr: 2px solid rgb(167, 216, 166, 0.5);
   .search-form {
     display: flex;
-    font-size: 30px;
     padding: 2px;
-    border: 2px solid #d1d1d1;
+    border: var(--brdr);
     border-radius: 40px;
   }
   .search-bar {
     /* flex: 1; */
-    padding: 7px;
     border-radius: 40px;
     border: 0;
     outline: none;
     min-width: 300px;
+    padding-left: 9px;
   }
   .search-button {
     padding: 7px;
-    border-radius: 10px;
+    border: var(--brdr);
     opacity: 0.6;
     transition: 0.3s;
     border-radius: 50%;
@@ -31,10 +31,6 @@ const Wrapper = styled.div`
   .search-button:hover {
     opacity: 1;
   }
-
-  /* @media query (900px) {
-
-  } */
 `
 
 const SearchForm = () => {
@@ -54,7 +50,7 @@ const SearchForm = () => {
         : window.location.href
   }
 
-  const placeholder = 'Search by ingredient, name, first letter...'
+  const placeholder = 'Search by ingredient, title...'
 
   return (
     <Wrapper>

@@ -19,7 +19,7 @@ const Wrapper = styled.div`
     border-top: var(--brdr);
     display: flex;
     align-items: baseline;
-    padding: 10px 0 10px;
+    padding: 6px 0 6px;
     width: 100%;
   }
   .nav-links a {
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
     padding-right: 4.4rem;
     color: black;
     cursor: pointer;
-    font-size: 23px;
+    font-size: 17px;
   }
 
   .logo {
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   }
   span {
     color: #b6b6b6;
-    font-size: 20px;
+    font-size: 17px;
     align-self: end;
     padding-left: 10px;
   }
